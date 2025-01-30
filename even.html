@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent {
+            /* Add styles here if needed */
+            border: 3px solid black;
+           width:70vw;
+           padding:70px;
+           background-color: rebeccapurple;
+        }
+        #child_1{
+            border: 3px solid black;
+            color: aliceblue;
+            /* width:70vw; */
+            padding:50px;
+            background-color: aquamarine;
+        }
+        #child_1_1{
+            border: 3px solid black;
+            /* width:70vw; */
+            padding: 35px;
+            background-color:green;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input id="input_1" type="text" />
+        <p id="p1"></p>
+    </form>
+    <div id="parent">
+        <div id="child_1">
+            <div id="child_1_1">
+            </div>
+        </div>
+    </div>
+    <script>
+        let parent=document.getElementById("parent")
+        let child=document.getElementById("child_1")
+        let grand_child=document.getElementById("child_1_1")
+        let ip1=document.getElementById("ip1")
+        let text=document.getElementById("p1")
+
+        parent.addEventListener("click",(e)=>{
+            e.stopImmediatePropagation()
+            console.log("par is clicked")
+
+
+        })
+        child.addEventListener("click",()=>{
+            console.log("child is clicked")
+
+        })
+        grand_child.addEventListener("click",()=>{
+            console.log("grand child is clicked")
+
+        })
+        // ip1.addEventListener("change",()=>{
+        //     e.preventDefault()
+        //     text.innerText=e.target.value
+        // })
+        //  ip1.addEventListener("focus",(e)=>{
+        //     e.target.style.backgroundColor='orange'
+        //     e.target.style.border="2px solid red"
+        // })
+        // ip1.addEventListener("blur",(e)=>{
+        //     e.target.style.backgroundColor='green'
+        //     e.target.style.border="pink"
+        // })
+        // ip1.addEventListener("keydown",(e)=>{
+        //     e.target.style.backgroundColor='red'
+        // })
+        // ip1.addEventListener("keyup",(e)=>{
+        //     e.target.style.backgroundColor='green'
+        // })
+    </script>
+</body>
+</html>
